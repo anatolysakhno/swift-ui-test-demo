@@ -20,8 +20,7 @@ final class CreateUserTests: DemoUiAppTests {
                else {
             return XCTFail("Invalid test parameters")
         }
-        try! app.start()
-        let actions: UserActions = try! app.usersActions
+        let actions: UserActions = try! app.start()
         try! actions.addUser(user: user)
         assert (actions.isUserExist(user: user), "User \(user.fullName) should exist")
     }

@@ -12,11 +12,5 @@ enum ApplicationError: Error {
 
 class BaseUiApplication: XCUIApplication
 {
-    func start() throws{
-        super.launch()
-        let started = waitForExistence(timeout: 3)
-        guard started else {
-            throw ApplicationError.notLaunched
-        }
-    }
+    
 }
