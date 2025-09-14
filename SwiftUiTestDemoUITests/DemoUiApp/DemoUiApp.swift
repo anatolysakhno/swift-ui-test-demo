@@ -11,4 +11,13 @@ final class DemoUiApp: BaseUiApplication{
             return try UserActions(app:self, screen: UsersListScreen(app:self))
      }
     }
+    
+    func start() throws -> UserActions {
+        super.launch()
+        let started = waitForExistence(timeout: 3)
+        guard started else {
+            throw ApplicationError.notLaunched
+        }
+        return try usersActions
+    }
 }

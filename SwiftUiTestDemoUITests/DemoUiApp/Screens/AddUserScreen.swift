@@ -51,13 +51,14 @@ class AddUserScreen: DemoUiBaseScreen {
         }
     }
     
-    func tapCreateUserButton() throws {
+    func tapCreateUserButton() throws -> UsersListScreen {
         createUserButton.tap()
         XCTAssertFalse(errorMessageText.exists, "errorMessageText should not exist")
         // to replace assertions with error
         guard !errorMessageText.exists
         else { throw
             ScreenValidationError.AdultsOnly }
+        return try UsersListScreen(app: self.app)
     }
        
 }
