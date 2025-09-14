@@ -12,8 +12,8 @@ struct AddUserView: View {
     @Environment(Users.self) private var users
     @Environment(\.dismiss) private var dismiss
     
-    @State private var name: String = ""
-    @State private var secondName: String = ""
+    @State private var firstName: String = ""
+    @State private var lastName: String = ""
     @State private var ageString: String = ""
     @State private var showError: Bool = false
     
@@ -29,10 +29,10 @@ struct AddUserView: View {
                     .background(Color.red)
             }
             Group {
-                TextField("Name", text: $name)
+                TextField("Name", text: $firstName)
                     .accessibilityIdentifier("userNameTextField")
-                TextField("Second Name", text: $secondName)
-                    .accessibilityIdentifier("userSecondNameTextField")
+                TextField("Second Name", text: $lastName)
+                    .accessibilityIdentifier("userlastNameTextField")
                 TextField("Age", text: $ageString)
                     .accessibilityIdentifier("userAgeTextField")
                     .keyboardType(.numberPad)
@@ -55,7 +55,7 @@ struct AddUserView: View {
     }
     
     private var buttonEnabled: Bool {
-        !name.isEmpty && !secondName.isEmpty && !ageString.isEmpty
+        !firstName.isEmpty && !lastName.isEmpty && !ageString.isEmpty
     }
     
     private func createUser() {
@@ -64,18 +64,18 @@ struct AddUserView: View {
             showError = true
             return
         }
-        let user = UserModel(name: name, secondName: secondName, age: age)
+        let user = UserModel(name: firstName, lastName: lastName, age: age)
         users.addUser(user)
         dismiss()
     }
     
     // Testing
     private func fillRandom() {
-        let name = "User-\(Int.random(in: 0...1000))"
-        let secondName = "Sname-\(Int.random(in: 0...1000))"
+        let firstName = "User-\(Int.random(in: 0...1000))"
+        let lastName = "Sname-\(Int.random(in: 0...1000))"
         let age = Int.random(in: 18...100).description
-        self.name = name
-        self.secondName = secondName
+        self.firstName = firstName
+        self.lastName = lastName
         self.ageString = age
     }
 }

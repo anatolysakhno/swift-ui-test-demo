@@ -29,17 +29,17 @@ final class TestExperimentsUITests: XCTestCase {
     func testExample() throws {
         
         let userName = "First-123"
-        let userSecondName = "Second"
-        let fullName = "\(userName) \(userSecondName)"
+        let userlastName = "Second"
+        let fullName = "\(userName) \(userlastName)"
         let age = "7"
         
         let usersListPage = UsersListPage(app: app)
-        let addUserPage = AddUserViewScreen(app: app)
+        let addUserPage = AddUserViewPage(app: app)
         
         app.activate()
         usersListPage.tapAddButton()
         
-        addUserPage.fillTextFields(name: userName, secondName: userSecondName, age: age)
+        addUserPage.fillTextFields(firstName: userName, lastName: userlastName, age: age)
         addUserPage.tapCreateUserButton()
         
         usersListPage.checkCellExists(fullName: fullName, age: age)

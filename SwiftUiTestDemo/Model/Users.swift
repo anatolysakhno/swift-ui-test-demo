@@ -22,6 +22,6 @@ final class Users {
 }
 
 private let usersMock: [UserModel] = [
-    UserModel(name: "John", secondName: "Smith", age: 27),
-    UserModel(name: "Jane", secondName: "Doe", age: 25)
+    UserModel(name: "John", lastName: "Smith", age: 27),
+    UserModel(name: "Jane", lastName: "Doe", age: 25)
 ]

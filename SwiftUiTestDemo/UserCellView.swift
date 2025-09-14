@@ -13,7 +13,7 @@ struct UserCellView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("\(user.name) \(user.secondName)")
+            Text("\(user.firstName) \(user.lastName)")
                 .accessibilityIdentifier("userFullName")
                 .font(.title3)
             Text("Age: \(user.age)")
@@ -24,5 +24,5 @@ struct UserCellView: View {
 }
 
 #Preview {
-    UserCellView(user: UserModel(name: "First", secondName: "Last", age: 27))
+    UserCellView(user: UserModel(name: "First", lastName: "Last", age: 27))
 }
