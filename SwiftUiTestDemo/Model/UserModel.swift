@@ -8,14 +8,14 @@ import Foundation
 
 final class UserModel {
     let id: UUID
-    let name: String
-    let secondName: String
+    let firstName: String
+    let lastName: String
     let age: Int
     
-    init(name: String, secondName: String, age: Int) {
+    init(name: String, lastName: String, age: Int) {
         self.id = UUID()
-        self.name = name
-        self.secondName = secondName
+        self.firstName = name
+        self.lastName = lastName
         self.age = age
     }
 }

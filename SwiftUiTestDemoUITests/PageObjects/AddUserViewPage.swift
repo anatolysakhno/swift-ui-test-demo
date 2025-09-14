@@ -7,7 +7,7 @@
 
 import XCTest
 
-struct AddUserViewScreen {
+struct AddUserViewPage {
     let app: XCUIApplication
     
     var createUserButton: XCUIElement {
@@ -18,8 +18,8 @@ struct AddUserViewScreen {
         app.textFields["userNameTextField"]
     }
     
-    var userSecondNameTextField: XCUIElement {
-        app.textFields["userSecondNameTextField"]
+    var userlastNameTextField: XCUIElement {
+        app.textFields["userlastNameTextField"]
     }
     
     var userAgeTextField: XCUIElement {
@@ -30,14 +30,14 @@ struct AddUserViewScreen {
         app.staticTexts["formErrorMessage"]
     }
     
-    func fillTextFields(name: String, secondName: String, age: String) {
+    func fillTextFields(firstName: String, lastName: String, age: String) {
         XCTContext.runActivity(named: activityName("Filling text fields")) { _ in
             XCTAssert(createUserButton.waitForExistence(timeout: 3))
             XCTAssert(createUserButton.isEnabled == false)
             userNameTextField.tap()
-            userNameTextField.typeText(name)
-            userSecondNameTextField.tap()
-            userSecondNameTextField.typeText(secondName)
+            userNameTextField.typeText(firstName)   
+            userlastNameTextField.tap()
+            userlastNameTextField.typeText(lastName)
             userAgeTextField.tap()
             userAgeTextField.typeText(age)
             XCTAssert(createUserButton.isEnabled)

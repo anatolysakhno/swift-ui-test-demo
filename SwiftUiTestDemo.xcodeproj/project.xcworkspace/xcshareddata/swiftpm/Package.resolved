@@ -1,6 +1,15 @@
 {
-  "originHash" : "a8c8619bf760e5076a05afd9499d07003b882365899c0e4bb943d25272a6d37b",
+  "originHash" : "e73db4bf6731b024b2d905fecf813d7042c2eeda9ac3bbe8fb0d95a098cbbb11",
   "pins" : [
+    {
+      "identity" : "fakery",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vadymmarkov/Fakery",
+      "state" : {
+        "revision" : "71cb3bf36a808534659d1248780c2bf3c4c4fc91",
+        "version" : "5.1.0"
+      }
+    },
     {
       "identity" : "swift-syntax",
       "kind" : "remoteSourceControl",

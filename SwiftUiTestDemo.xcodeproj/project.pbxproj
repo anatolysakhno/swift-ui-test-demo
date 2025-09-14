@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6999BE9B2E75F75F00E22E14 /* Fakery in Frameworks */ = {isa = PBXBuildFile; productRef = 6999BE9A2E75F75F00E22E14 /* Fakery */; };
 		AFCE8EF42E72FE5100D8E4CF /* TestExperimentsMacros in Frameworks */ = {isa = PBXBuildFile; productRef = AFCE8EF32E72FE5100D8E4CF /* TestExperimentsMacros */; };
 		AFCE8EF62E72FE5100D8E4CF /* TestExperimentsMacrosClient in Frameworks */ = {isa = PBXBuildFile; productRef = AFCE8EF52E72FE5100D8E4CF /* TestExperimentsMacrosClient */; };
 		AFCE8EF92E73011500D8E4CF /* TestExperimentsMacros in Frameworks */ = {isa = PBXBuildFile; productRef = AFCE8EF82E73011500D8E4CF /* TestExperimentsMacros */; };
@@ -74,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6999BE9B2E75F75F00E22E14 /* Fakery in Frameworks */,
 				AFCE8EF92E73011500D8E4CF /* TestExperimentsMacros in Frameworks */,
 				AFCE8EF42E72FE5100D8E4CF /* TestExperimentsMacros in Frameworks */,
 				AFCE8EF62E72FE5100D8E4CF /* TestExperimentsMacrosClient in Frameworks */,
@@ -183,6 +185,7 @@
 				AFCE8EF52E72FE5100D8E4CF /* TestExperimentsMacrosClient */,
 				AFCE8EF82E73011500D8E4CF /* TestExperimentsMacros */,
 				AFCE8EFA2E73011500D8E4CF /* TestExperimentsMacrosClient */,
+				6999BE9A2E75F75F00E22E14 /* Fakery */,
 			);
 			productName = TestExperimentsUITests;
 			productReference = AF28EAD52E6C5F2800E588BE /* SwiftUiTestDemoUITests.xctest */;
@@ -222,6 +225,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				696F05242E7470AF005078B3 /* XCLocalSwiftPackageReference "TestExperimentsMacros" */,
+				6999BE992E75F68100E22E14 /* XCRemoteSwiftPackageReference "Fakery" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = AF28EABF2E6C5F2700E588BE /* Products */;
@@ -598,7 +602,23 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		6999BE992E75F68100E22E14 /* XCRemoteSwiftPackageReference "Fakery" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vadymmarkov/Fakery";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		6999BE9A2E75F75F00E22E14 /* Fakery */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6999BE992E75F68100E22E14 /* XCRemoteSwiftPackageReference "Fakery" */;
+			productName = Fakery;
+		};
 		AFCE8EF32E72FE5100D8E4CF /* TestExperimentsMacros */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TestExperimentsMacros;

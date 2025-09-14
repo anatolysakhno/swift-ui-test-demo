@@ -1,9 +1,17 @@
+# Xcode
 .DS_Store
-*.swp
-*~.nib
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
 
+# Build products
 build/
-*./xcuserdata/*.xcuserdatad/UserInterfaceState.xcuserstate
-*.pbxuser
-*.perspective
-*.perspectivev3
+DerivedData/
+
+# Swift Package Manager
+.swiftpm/
+
+# Carthage
+Carthage/Build/
+
+# Pods (if not using CocoaPods for dependency management)
+Pods/
