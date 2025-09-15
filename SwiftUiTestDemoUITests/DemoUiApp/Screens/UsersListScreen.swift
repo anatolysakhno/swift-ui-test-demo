@@ -25,7 +25,7 @@ class UsersListScreen: DemoUiBaseScreen {
     
     func tapAddButton() throws -> AddUserScreen {
         addButton.tap()
-        return try! AddUserScreen(app: self.app as DemoUiApp)
+        return try AddUserScreen(app: self.app as DemoUiApp)
     }
     
     func checkCellExists(fullName: String, age: String)-> Bool {

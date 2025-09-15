@@ -15,13 +15,23 @@ import TestExperimentsMacros
 ])
 
 final class CreateUserTests: DemoUiAppTests {
-    func runTest(params: [String: Any]) {
+    func _runTest_(params: [String: Any]) {
         guard let user = params["user"] as? User
                else {
             return XCTFail("Invalid test parameters")
         }
         let actions: UserActions = try! app.start()
         try! actions.addUser(user: user)
-        assert (actions.isUserExist(user: user), "User \(user.fullName) should exist")
+        assert(actions.isUserExist(user: user), "User \(user.fullName) should exist")
+    }
+    
+    func runTest(params: [String: Any]) {
+        guard let user = params["user"] as? User
+               else {
+            return XCTFail("Invalid test parameters")
+        }
+        let actions: UserActions = assertNoThrow(try app.start(), message: "")
+        XCTAssertNoThrow(try actions.addUser(user: user), "User was not added")
+        XCTAssert(actions.isUserExist(user: user), "User \(user.fullName) should exist")
     }
 }
