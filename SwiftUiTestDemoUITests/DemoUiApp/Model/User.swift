@@ -16,10 +16,16 @@ final class User {
         self.age = age
     }
     
-    var fullName: String {get{
-       return "\(firstName) \(lastName)"
-    }}
-    var ageCategory: String {get{
-       return self.age < 18 ? "Minor" : self.age >= 65 ? "Senior" :"Adult"
-    }}
+    var fullName: String {
+       "\(firstName) \(lastName)"
+    }
+    var ageCategory: String {
+       self.age < 18 ? "Minor" : self.age >= 65 ? "Senior" : "Adult"
+    }
+}
+
+extension User: CustomStringConvertible {
+    var description: String {
+        fullName + ", \(age) years old, \(ageCategory)"
+    }
 }
