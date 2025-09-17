@@ -14,6 +14,7 @@ class BaseTests: ParametrizedTestCase {
     
     override func setUpWithError() throws {
         continueAfterFailure = false
+        XCUIDevice.shared.orientation = .portrait
     }
     
     // Need to be overridden in subclasses
